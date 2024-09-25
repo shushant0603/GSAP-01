@@ -1,6 +1,6 @@
 gsap.registerPlugin(ScrollTrigger)
 
-gsap.from('.logo div ',{
+gsap.from('.logo div',{
     opacity:0,
     delay:1,
     x:20
@@ -12,20 +12,17 @@ gsap.from(menu_items.children ,{
     x:0,
     duration:1,
     delay:1.5,
-    // stagger:0.25     this stagger means the gap time btw the elemet
-     stagger:{
-         amount:2     //this means tha total time for all elements  automatically equaly distributed
-        }
+    stagger:{
+        amount:1
+    }
 })
 
 
 gsap.utils.toArray('.star').forEach(star=>{
     gsap.fromTo(star,{
-        // rotation:450,
-        rotation:900,
+        rotation:450,
         opacity:0,
-        y:100,
-        // x:-50
+        y:100
     },{
         rotation:0,
         opacity:1,
@@ -34,4 +31,59 @@ gsap.utils.toArray('.star').forEach(star=>{
         delay:1.5,
         scrollTrigger:star
     })
+})
+
+
+gsap.utils.toArray('.title').forEach(title=>{
+    gsap.fromTo(title,{
+        letterSpacing:'10px',
+        opacity:0,
+        x:300,
+        skewX:65
+    },{
+        letterSpacing:'0',
+        opacity:1,
+        x:0,
+        skewX:0,
+        duration:1,
+        delay:.5,
+        scrollTrigger:title
+    })
+})
+
+gsap.utils.toArray('p').forEach(p=>{
+    gsap.fromTo(p,{
+        opacity:0,
+        x:150,
+        skewX:30
+    },{
+        opacity:1,
+        x:0,
+        skewX:0,
+        duration:1,
+        delay:.5,
+        scrollTrigger:p
+
+    })
+})
+
+
+gsap.utils.toArray('button').forEach(button=>{
+    gsap.fromTo(button,{
+        opacity:0,
+    },{
+        opacity:1,
+        duration:1,
+        delay:1,
+        scrollTrigger:button
+
+    })
+})
+
+
+gsap.from('.pyramid' ,{
+    opacity:0,
+    scale:.5,
+    duration:1,
+    delay:.5
 })
